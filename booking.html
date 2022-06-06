@@ -10,6 +10,29 @@
     <title>UpDrone Co.</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('U1365EuqDGTF2c4Id');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm('contact_service', 'contact_form', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
     <link rel="stylesheet" href="home.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -122,116 +145,30 @@
     <br />
     <br />
     <div>
-      <!-- <h2 id="maintitle">Taking the sky's</h2>
-        <h3 id="descript">UpDrone Co. is a drone service company based out of and serving North East Georgia. We offer services for Real Estate Photography, Roof Inspections and Events. We take the sky's using high quality drones that have capabilities of shooting HDR photos and 4K videos. Whether you are wanting to make a beautiful aerial tour of your clients home, wanting to check condition of your roof or planning your dream wedding, UpDrone Co. is here for you. </h3>
-        <h4 id="subscript">We are trained, licensed and insured to make sure you get nothing but a high quality experience when working with us!</h4> -->
-      <div class="card text-bg-dark mx-auto" id="bodycard">
-        <div class="card-header" id="maintitle">Real Estate</div>
-        <div class="card-body">
-          <p class="card-text" id="innercard">
-            We like to give our customers a choice of a package, in which they
-            can have everything they need to accomplish their goal. We have 3
-            packages to chose from, there are also add ons which can boost
-            the quality of images and pictures.
-          </p>
-        </div>
-      </div>
-      <br />
-      <br>
-
-      <div>
-        <div class="card mx-auto bodycard" style="width: 40rem">
-          <div class="card-body">
-            <h5 class="card-title">Takeoff package</h5>
-            <h6>$75</h6>
-            <p class="card-text">
-              Our takeoff will get you started with basic aerial
-              footage and photos.
-            </p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-              10 Aerial Photos of the property in 1080p (MLS Quality)
-            </li>
-            <li class="list-group-item">1 30-second aerial video in 1080p</li>
-            <li class="list-group-item">
-              Outlook folder containing the footage and pictures.
-            </li>
-          </ul>
-          <div class="card-body">
-            <button type="button" class="btn btn-warning">Book</button>
-            <button type="button" class="btn btn-secondary">More info</button>
-            
-          </div>
-        </div>
-        <br>
-        <br>
-        <div class="card mx-auto bodycard" style="width: 40rem">
+        <div class="card text-bg-dark mx-auto">
+            <div class="card-header" id="maintitle">Booking Request</div>
             <div class="card-body">
-              <h5 class="card-title">Pro package</h5>
-              <h6>$125</h6>
-              <p class="card-text">
-                Our Pro package will allow you to present the house with the highest quality photos and video, giving you a stunning aerial gallery.
-              </p>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">
-                15 Aerial Photos of the property shot with in 4K with HDR (MLS Quality)
-              </li>
-              <li class="list-group-item">1 30-second aerial video in 4K</li>
-              <li class="list-group-item">
-                Outlook folder containing the footage and pictures, plus your choice of physical media(Flash drive or SD card).
-              </li>
-            </ul>
-            <div class="card-body">
-                <button type="button" class="btn btn-warning">Book</button>
-                <button type="button" class="btn btn-secondary">More info</button>
+                <form id="contact-form" class="bodycard2" onsubmit="confirmInput()" action="success.html">
+                    <input class="form-control" type="hidden" name="contact_number">
+                    <label class="formlabel">Name</label>
+                    <input class="form-control"type="text" name="user_name" id="fname">
+                    <label class="formlabel">Email</label>
+                    <input class="form-control"type="email" name="user_email">
+                    <label class="formlabel">Phone Numer</label>
+                    <input class="form-control"type="text" name="user_phone">
+                    <label class="formlabel">Best time to reach you</label>
+                    <input class="form-control"type="text" name="user_time">
+                    <label class="formlabel">Interested in?</label>
+                    <textarea class="form-control" name="message" rows="3"></textarea>
+                    <br>
+                    <br>
+                    <input class="btn btn-warning" style="display: block; margin: auto;" type="submit" value="Send">
+                    
+                    
+                </form>
+              
             </div>
           </div>
-          <br>
-          <br>
-          <div class="card mx-auto bodycard" style="width: 40rem">
-            <div class="card-body">
-              <h5 class="card-title">Executive package</h5>
-              <h6>$400</h6>
-              <p class="card-text">
-                Our ground floor package will get you started with basic aerial
-                footage and photos.
-              </p>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">
-                Unlimited (up to 40) HDR aerial photos
-              </li>
-              <li class="list-group-item">Unlimited (up to 4 mins) aerial 4K footage </li>
-              <li class="list-group-item">
-                Professionally edited 1 to 2-minute video, showcasing the house, property, amenities and surrounding area. With added realtor advertisement at end of video.
-              </li>
-            </ul>
-            <div class="card-body">
-                <button type="button" class="btn btn-warning">Book</button>
-                <button type="button" class="btn btn-secondary">More info</button>
-            </div>
-          </div>
-          <br>
-          <br>
-          <div>
-            <div class="card mx-auto bodycard" style="width: 40rem">
-              <div class="card-body">
-                <h5 class="card-title">Add On's</h5>
-              </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                  1 Photo ($10)
-                </li>
-                <li class="list-group-item">2+ Photos ($5 each)</li>
-                <li class="list-group-item">
-                  1 30-second video ($15 for 1080p, $20 for 4K)
-                </li>
-              </ul>
-            </div>
-            <br>
-            <br>
       </div>
       <footer class="bg-dark text-center text-white">
         <!-- Grid container -->
@@ -292,5 +229,11 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
+    <script>
+        function confirmInput() {
+          fname = document.forms[0].fname.value;
+          alert("Hello " + fname + "! You will now be redirected to www.w3Schools.com");
+        }
+        </script>
   </body>
 </html>

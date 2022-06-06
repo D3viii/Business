@@ -10,10 +10,17 @@ nav .navbar-nav a{
     font-family: 'Alata', sans-serif;
     font-size: 30px;
 }
-
+.formlabel {
+    text-align: center;
+    color: #FACF39;
+    font-family: 'Alata', sans-serif;
+    font-size: 20px;
+    padding-top: 15px;
+}
 #innercard {
     font-family: 'Alata', sans-serif;
     font-size: 20px;
+    text-align: center;
 
 
 }
@@ -21,6 +28,16 @@ nav .navbar-nav a{
 #bodycard {
     display:block;
     margin:auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.bodycard2 {
+    display:block;
+    margin:auto;
+    padding-left: 100px;
+    padding-right: 100px;
+    max-width: 600px;
+    
 }
 .center {
     display: block;
