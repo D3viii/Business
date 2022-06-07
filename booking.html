@@ -27,6 +27,7 @@
                 emailjs.sendForm('contact_service', 'contact_form', this)
                     .then(function() {
                         console.log('SUCCESS!');
+                        myFunction()
                     }, function(error) {
                         console.log('FAILED...', error);
                     });
@@ -148,7 +149,7 @@
         <div class="card text-bg-dark mx-auto">
             <div class="card-header" id="maintitle">Booking Request</div>
             <div class="card-body">
-                <form id="contact-form" class="bodycard2" onsubmit="confirmInput()" action="success.html">
+                <form id="contact-form" class="bodycard2">
                     <input class="form-control" type="hidden" name="contact_number">
                     <label class="formlabel">Name</label>
                     <input class="form-control"type="text" name="user_name" id="fname">
@@ -162,7 +163,7 @@
                     <textarea class="form-control" name="message" rows="3"></textarea>
                     <br>
                     <br>
-                    <input class="btn btn-warning" style="display: block; margin: auto;" onclick="window.location.href = 'success.html';" type="submit" value="Send">
+                    <input class="btn btn-warning" style="display: block; margin: auto;" type="submit" value="Send">
                     
                     
                 </form>
@@ -229,11 +230,11 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
-    <!-- <script>
-        function confirmInput() {
-          fname = document.forms[0].fname.value;
-          alert("Success!" + fname + "We will contact you as soon as possible or at your specified time!");
-        }
-        </script> -->
+    <script>
+        function myFunction() {  
+         window.location.href="success.html";  
+       }
+      </script>
+      
   </body>
 </html>
