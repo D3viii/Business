@@ -30,13 +30,17 @@ nav .navbar-nav a{
     margin:auto;
     padding-left: 15px;
     padding-right: 15px;
+    max-width: 60rem;
+}
+.bodycard {
+  max-width: 40rem;
 }
 .bodycard2 {
     display:block;
     margin:auto;
     padding-left: 100px;
     padding-right: 100px;
-    max-width: 600px;
+    max-width: 40rem;
     
 }
 .center {
