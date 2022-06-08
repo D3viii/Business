@@ -1,0 +1,19 @@
+{
+  "name": "updroneweb",
+  "version": "1.0.0",
+  "description": "website for updrone",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/D3viii/Business.git"
+  },
+  "author": "Devin Carr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/D3viii/Business/issues"
+  },
+  "homepage": "https://github.com/D3viii/Business#readme"
+}
