@@ -1,14 +1,43 @@
-const http = require('http');
+// Dependencies
+// =============================================================
+var express = require("express");
+var path = require("path");
 
-const hostname = '127.0.0.1';
-const port = 3000;
+// Sets up the Express App
+// =============================================================
+var app = express();
+var PORT = 3000;
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
+// Sets up the Express app to handle data parsing
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// Star Wars Characters (DATA)
+// =============================================================
+
+
+// Routes
+// =============================================================
+
+// Basic route that sends the user first to the AJAX Page
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+app.get("/booking", function(req, res) {
+  res.sendFile(path.join(__dirname, "booking.html"));
+});
+
+// Displays all characters
+
+// Displays a single character, or returns false
+
+
+// Create New Characters - takes in JSON input
+
+
+// Starts the server to begin listening
+// =============================================================
+app.listen(PORT, function() {
+  console.log("App listening on PORT " + PORT);
 });

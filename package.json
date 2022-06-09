@@ -2,7 +2,7 @@
   "name": "updroneweb",
   "version": "1.0.0",
   "description": "website for updrone",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/D3viii/Business/issues"
   },
-  "homepage": "https://github.com/D3viii/Business#readme"
+  "homepage": "https://github.com/D3viii/Business#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
 }
