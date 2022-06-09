@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/D3viii/Business#readme",
   "dependencies": {
-    "express": "^4.18.1"
+    "bootstrap": "^5.2.0-beta1",
+    "express": "^4.18.1",
+    "jquery": "^3.6.0"
   }
 }
