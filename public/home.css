@@ -25,6 +25,10 @@ nav .navbar-nav a{
 
 }
 
+.subnav {
+  background-color: black;
+}
+
 #bodycard {
     display:block;
     margin:auto;
@@ -48,6 +52,10 @@ nav .navbar-nav a{
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+  }
+
+  #navbar-toggler-icon {
+    background-color: #FACF39;
   }
   
   
